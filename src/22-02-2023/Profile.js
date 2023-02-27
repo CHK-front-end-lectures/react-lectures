@@ -23,6 +23,7 @@ const Profile = () => {
       <div>Gender: {person.gender}</div>
       <div>{person.name}'s age is: {person.age}</div>
     </div>
+    
   );
 };
 
