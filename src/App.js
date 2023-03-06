@@ -1,13 +1,10 @@
-import Profile from './27-02-2023/Profile';
-import ProfileList from './27-02-2023/ProfileList';
 import './App.css';
-import Todos from './01-03-2023/Todos';
-import List from './01-03-2023/List';
+import Gallery from './06-03-2023/Gallery';
 
 function App() {
   return (
     <div>
-      <List />
+      <Gallery />
     </div>
   );
 }
