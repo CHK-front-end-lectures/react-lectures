@@ -21,3 +21,32 @@ code {
   display: flex;
   grid-gap: 40px;
 }
+
+.traffic-signs {
+  display: flex;
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+.traffic-sign {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.green {
+  background-color: green;
+}
+
+.flex {
+  display: flex;
+  grid-gap: 1rem;
+}

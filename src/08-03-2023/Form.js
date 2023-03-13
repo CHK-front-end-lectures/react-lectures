@@ -1,18 +1,11 @@
 import { useState } from 'react';
 
 const Form = () => {
-  const [person, setPerson] = useState([
-    {
-      name: 'Egzon',
-      lastName: 'Murati',
-      email: 'egzon@gmail.com',
-    },
-    {
-      name: 'Ervis',
-      lastName: 'Murati',
-      email: 'egzon@gmail.com',
-    },
-  ]);
+  const [person, setPerson] = useState({
+    name: 'Egzon',
+    lastName: 'Murati',
+    email: 'egzon@gmail.com',
+  });
 
   const handleNameChange = (evt) => {
     setPerson({
