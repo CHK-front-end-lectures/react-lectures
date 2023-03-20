@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.game {
+  max-width: 300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+
+.game button {
+  height: 60px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border: 2px solid #999
+}
