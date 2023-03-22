@@ -1,11 +1,6 @@
 import Square from './Square';
-import { useState } from 'react';
 
-const Board = () => {
-  const [squares, setSquares] = useState(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState(true);
-  const status = calculateWinner(squares); // calculated during rendering
-
+const Board = ({squares, xIsNext, status, onPlay}) => {
   const handleSquareClick = (index) => {
     if (squares[index] || status) {
       return; // early return
@@ -17,21 +12,20 @@ const Board = () => {
     } else {
       nextSquares[index] = 'O';
     }
-    setXIsNext(!xIsNext); // toggle function
-    setSquares(nextSquares);
+    onPlay(nextSquares);
   };
 
-  const renderWinner = () => {
-    if (status === null) {
-      return;
-    }
+  // const renderWinner = () => {
+  //   if (status === null) {
+  //     return;
+  //   }
 
-    if(status === 'X') {
-      return 'Winner is X'
-    } else {
-      return 'Winner is O'
-    }
-  }
+  //   if(status === 'X') {
+  //     return 'Winner is X'
+  //   } else {
+  //     return 'Winner is O'
+  //   }
+  // }
 
   return (
     <div className="game">
@@ -44,7 +38,7 @@ const Board = () => {
           />
         );
       })}
-      {status && 'Winner is: ' + status};
+      {status && 'Winner is: ' + status}
       {/* {renderWinner()}
       {status === 'X' ? 'Winner is X' : 'Winner is O'} */}
     </div>
@@ -53,7 +47,7 @@ const Board = () => {
 
 // if, ternary operator, &&
 
-const calculateWinner = (squares) => {
+export const calculateWinner = (squares) => {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],

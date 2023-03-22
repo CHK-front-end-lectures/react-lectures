@@ -50,3 +50,14 @@ code {
   display: flex;
   grid-gap: 1rem;
 }
+
+.moves {
+  max-width: 300px;
+}
+
+.move {
+  padding: 5px 10px;
+  background: #999;
+  color: black;
+  margin-bottom: 15px;
+}
