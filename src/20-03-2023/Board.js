@@ -1,6 +1,6 @@
 import Square from './Square';
 
-const Board = ({squares, xIsNext, status, onPlay}) => {
+const Board = ({ squares, xIsNext, status, onPlay }) => {
   const handleSquareClick = (index) => {
     if (squares[index] || status) {
       return; // early return
@@ -35,10 +35,11 @@ const Board = ({squares, xIsNext, status, onPlay}) => {
             key={index}
             value={square}
             handleSquareClick={() => handleSquareClick(index)}
+            isHighlighted={status?.winnerVariation.includes(index)}
           />
         );
       })}
-      {status && 'Winner is: ' + status}
+      {status && 'Winner is: ' + status?.winner}
       {/* {renderWinner()}
       {status === 'X' ? 'Winner is X' : 'Winner is O'} */}
     </div>
@@ -56,17 +57,18 @@ export const calculateWinner = (squares) => {
     [1, 4, 7],
     [2, 5, 8],
     [0, 4, 8],
-    [2, 4, 6]
-  ]
+    [2, 4, 6],
+  ];
 
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
-    if(squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a]; // X ose O
+    if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
+      let winnerVariation = [a, b, c];
+      return { winner: squares[a], winnerVariation: winnerVariation };
     }
   }
   return null;
-}
+};
 
 export default Board;
 

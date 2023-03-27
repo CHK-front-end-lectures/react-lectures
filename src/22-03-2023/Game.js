@@ -11,9 +11,9 @@ const Game = () => {
 
   const handlePlay = (nextSquares) => {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares];
-    console.log('nextHistory', nextHistory);
+    // console.log('nextHistory', nextHistory);
     setHistory(nextHistory);
-    console.log('history', history);
+    // console.log('history', history);
     setCurrentMove(nextHistory.length - 1);
   };
 

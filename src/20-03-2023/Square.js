@@ -1,10 +1,12 @@
-
-const Square = ({value, handleSquareClick}) => {
+const Square = ({ value, handleSquareClick, isHighlighted }) => {
   return (
-    <button onClick={handleSquareClick}>
+    <button
+      onClick={handleSquareClick}
+      style={{ backgroundColor: isHighlighted ? 'blue' : 'white' }}
+    >
       {value}
     </button>
-  )
-}
+  );
+};
 
 export default Square;
